@@ -5,9 +5,7 @@ data = np.genfromtxt("ex1data1.txt",delimiter=',')
 m = len(data)
 x = np.array(data[0:m,0]).reshape(m,1)
 Y = np.array(data[0:m,1]).reshape(m,1)
-#plt.style.use('ggplot')
-#plt.plot(X,Y,'b.')
-#plt.show()
+
 X = np.hstack((np.ones((m,1)), x))
 theta = np.array([[-1],[-2]])
 
@@ -34,3 +32,7 @@ def Gradient_descent():
 Gradient_descent()
 print (theta)
 print("afterGD:",Cost_func())
+plt.style.use('ggplot')
+plt.plot(x,Y,'b.')
+plt.plot(x,hypothesis())
+plt.show()
