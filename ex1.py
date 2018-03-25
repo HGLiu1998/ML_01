@@ -1,9 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from decimal import *
-
-
-np.set_printoptions(precision = 4)
 
 data = np.genfromtxt("ex1data1.txt",delimiter=',')
 m = len(data)
@@ -21,9 +17,7 @@ def hypothesis():
     return np.dot(X,theta)
 def Cost_func():
     Cost = hypothesis()-Y
-    sum = 0.0
-    for i in range(0,m):
-        print(np.around(Cost[i][0], decimals = 4))
-        sum += np.square(Cost[i][0])
-    return np.around(sum,decimals = 4)
+    sum = np.sum(np.square(Cost))/(2*m)
+    return np.around(sum,decimals = 8)
+print(hypothesis())
 print(Cost_func())
