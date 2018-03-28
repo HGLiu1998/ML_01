@@ -29,7 +29,7 @@ def Gradient_descent():
         G = (X.T).dot(loss)/m #(2*97)*(97*1) 
         theta = theta - learningrate * G
     return theta
-Gradient_descent()
+Gradient_descent()  
 print (theta)
 print("afterGD:",Cost_func())
 #plt.style.use('ggplot')
