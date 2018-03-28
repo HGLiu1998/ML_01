@@ -16,11 +16,11 @@ def hypothesis():
 def Cost_func():
     Cost = hypothesis()-Y  
     sum = np.sum(np.square(Cost))/(2*m)
-    return np.around(sum,decimals = 8)
+    return sum
 
 print("beforeGD:",Cost_func())
 
-iteration = 100
+iteration = 2500
 learningrate = 0.01
 def Gradient_descent():
     global theta
@@ -32,7 +32,7 @@ def Gradient_descent():
 Gradient_descent()
 print (theta)
 print("afterGD:",Cost_func())
-plt.style.use('ggplot')
-plt.plot(x,Y,'b.')
-plt.plot(x,hypothesis())
-plt.show()
+#plt.style.use('ggplot')
+#plt.plot(x,Y,'b.')
+#plt.plot(x,hypothesis())
+#plt.show()
